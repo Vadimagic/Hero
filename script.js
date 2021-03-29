@@ -1,8 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const myAudioElement = document.getElementById('audio');
+  const audioElement = document.getElementById('audio');
   const startPlay = document.querySelector('.wrapper');
 
+  const togglePlay = () => {
+    audioElement.paused ? audioElement.play() : audioElement.pause();
+  }
+
   startPlay.addEventListener('click', () => {
-    myAudioElement.play();
+    togglePlay();
   })
 })
