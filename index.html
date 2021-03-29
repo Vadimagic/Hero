@@ -9,7 +9,17 @@
 </head>
 <body>
   <div class="wrapper">
-    <audio src="./music.mp3" controls autoplay></audio>
+    <audio id="audio" src="./music.mp3" loop></audio>
+    <audio src=""></audio>
   </div>
+
+
+  <script>
+    const myAudioElement = document.getElementById('audio');
+    const startPlay = document.querySelector('.wrapper');
+    startPlay.addEventListener('click', () => {
+      myAudioElement.play();
+    })
+  </script>
 </body>
 </html>
