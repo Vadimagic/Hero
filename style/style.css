@@ -12,5 +12,14 @@
 }
 
 .btn {
-  
+  background: transparent;
+  height: 200px;
+  border: 5px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border .5s ease;
+}
+
+.btn:hover {
+  border: 5px solid #ccc;
 }
