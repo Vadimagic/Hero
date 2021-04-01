@@ -18,7 +18,6 @@
   border-radius: 10px;
   cursor: pointer;
   transition: border .5s ease;
-  position: relative;
 }
 
 .btn:hover {

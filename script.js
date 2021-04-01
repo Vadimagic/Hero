@@ -1,9 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
   const audioElement = document.getElementById('audio');
   const startPlay = document.querySelector('.btn');
+  let windowWidth = window.innerWidth;
+  let windowHeight = window.innerHeight;
 
   let leftPlay = 0;
+  let moveLeft = false;
   let topPlay = 0;
+  let moveTop = false;
 
   const togglePlay = () => {
     audioElement.paused ? audioElement.play() : audioElement.pause();
@@ -16,10 +20,21 @@ document.addEventListener('DOMContentLoaded', () => {
   function animate() {
     startPlay.style.left = leftPlay + 'px';
     startPlay.style.top = topPlay + 'px';
-    leftPlay++;
-    topPlay++;
-    requestAnimationFrame(animate)
+
+    if (leftPlay <= 0) moveLeft = false;
+    else if (leftPlay + startPlay.offsetWidth >= windowWidth) moveLeft = true;
+    if (topPlay <= 0) moveTop = false;
+    else if (topPlay + startPlay.offsetHeight >= windowHeight) moveTop = true;
+
+    moveLeft ? leftPlay-=2 : leftPlay+=2;
+    moveTop ? topPlay-=2 : topPlay+=2;
+    requestAnimationFrame(animate);
   }
 
   animate()
+
+  window.addEventListener('resize', () => {
+    windowWidth = window.innerWidth;
+    windowHeight = window.innerHeight;
+  })
 })
