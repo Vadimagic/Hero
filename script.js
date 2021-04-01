@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (topPlay <= 0) moveTop = false;
     else if (topPlay + startPlay.offsetHeight >= windowHeight) moveTop = true;
 
-    moveLeft ? leftPlay-=2 : leftPlay+=2;
-    moveTop ? topPlay-=2 : topPlay+=2;
+    moveLeft ? leftPlay-=3 : leftPlay+=3;
+    moveTop ? topPlay-=3 : topPlay+=3;
     requestAnimationFrame(animate);
   }
 
