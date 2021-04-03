@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let topPlay = 0;
   let moveTop = false;
 
+  let speedMove = 5;
+
   const togglePlay = () => {
     audioElement.paused ? audioElement.play() : audioElement.pause();
   }
@@ -22,12 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
     startPlay.style.top = topPlay + 'px';
 
     if (leftPlay <= 0) moveLeft = false;
-    else if (leftPlay + startPlay.offsetWidth >= windowWidth) moveLeft = true;
+    else if (leftPlay + startPlay.offsetWidth >= windowWidth - speedMove) moveLeft = true;
     if (topPlay <= 0) moveTop = false;
-    else if (topPlay + startPlay.offsetHeight >= windowHeight) moveTop = true;
+    else if (topPlay + startPlay.offsetHeight >= windowHeight - speedMove) moveTop = true;
 
-    moveLeft ? leftPlay-=3 : leftPlay+=3;
-    moveTop ? topPlay-=3 : topPlay+=3;
+    moveLeft ? leftPlay-=speedMove : leftPlay+=speedMove;
+    moveTop ? topPlay-=speedMove : topPlay+=speedMove;
     requestAnimationFrame(animate);
   }
 
