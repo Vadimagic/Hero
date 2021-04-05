@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const audioElement = document.getElementById('audio');
+  const audioElement = document.getElementById('audio1');
   const startPlay = document.querySelector('.btn');
   let windowWidth = window.innerWidth;
   let windowHeight = window.innerHeight;
