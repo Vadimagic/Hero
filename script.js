@@ -1,35 +1,57 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const audioElement = document.getElementById('audio1');
-  const startPlay = document.querySelector('.btn1');
+  const audioElement1 = document.getElementById('audio1');
+  const audioElement2 = document.getElementById('audio2');
+  const startPlay1 = document.querySelector('.btn1');
+  const startPlay2 = document.querySelector('.btn2');
   let windowWidth = window.innerWidth;
   let windowHeight = window.innerHeight;
 
-  let leftPlay = 0;
-  let moveLeft = false;
-  let topPlay = 0;
-  let moveTop = false;
+  let leftPlay1 = 0;
+  let moveLeft1 = false;
+  let topPlay1 = 0;
+  let moveTop1 = false;
+  let leftPlay2 = 0;
+  let moveLeft2 = false;
+  let topPlay2 = 0;
+  let moveTop2 = false;
 
-  let speedMove = 5;
+  let speedMove1 = 5;
+  let speedMove2 = 10;
 
-  const togglePlay = () => {
+  const togglePlay = (audioElement) => {
     audioElement.paused ? audioElement.play() : audioElement.pause();
   }
 
-  startPlay.addEventListener('click', () => {
-    togglePlay();
+  startPlay1.addEventListener('click', () => {
+    togglePlay(audioElement1);
+  })
+
+  startPlay2.addEventListener('click', () => {
+    togglePlay(audioElement2);
   })
 
   function animate() {
-    startPlay.style.left = leftPlay + 'px';
-    startPlay.style.top = topPlay + 'px';
+    startPlay1.style.left = leftPlay1 + 'px';
+    startPlay1.style.top = topPlay1 + 'px';
 
-    if (leftPlay <= 0) moveLeft = false;
-    else if (leftPlay + startPlay.offsetWidth >= windowWidth - speedMove) moveLeft = true;
-    if (topPlay <= 0) moveTop = false;
-    else if (topPlay + startPlay.offsetHeight >= windowHeight - speedMove) moveTop = true;
+    startPlay2.style.left = leftPlay2 + 'px';
+    startPlay2.style.top = topPlay2 + 'px';
 
-    moveLeft ? leftPlay-=speedMove : leftPlay+=speedMove;
-    moveTop ? topPlay-=speedMove : topPlay+=speedMove;
+    if (leftPlay1 <= 0) moveLeft1 = false;
+    else if (leftPlay1 + startPlay1.offsetWidth >= windowWidth - speedMove1) moveLeft1 = true;
+    if (topPlay1 <= 0) moveTop1 = false;
+    else if (topPlay1 + startPlay1.offsetHeight >= windowHeight - speedMove1) moveTop1 = true;
+
+    if (leftPlay2 <= 0) moveLeft2 = false;
+    else if (leftPlay2 + startPlay2.offsetWidth >= windowWidth - speedMove2) moveLeft2 = true;
+    if (topPlay2 <= 0) moveTop2 = false;
+    else if (topPlay2 + startPlay2.offsetHeight >= windowHeight - speedMove2) moveTop2 = true;
+
+    moveLeft1 ? leftPlay1-=speedMove1 : leftPlay1+=speedMove1;
+    moveTop1 ? topPlay1-=speedMove1 : topPlay1+=speedMove1;
+
+    moveLeft2 ? leftPlay2-=speedMove2 : leftPlay2+=speedMove2;
+    moveTop2 ? topPlay2-=speedMove2 : topPlay2+=speedMove2;
     requestAnimationFrame(animate);
   }
 
