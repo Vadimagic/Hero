@@ -5,6 +5,10 @@
   background: black;
 }
 
+body {
+  background-color: white;
+}
+
 .wrapper {
   width: 100vw;
   height: 100vh;
