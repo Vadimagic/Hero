@@ -31,10 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   startPlay1.addEventListener('mouseover', () => {
     hoverPlay1 = true;
+    startPlay1.style.zIndex = '20';
   })
 
   startPlay1.addEventListener('mouseout', () => {
     hoverPlay1 = false;
+    startPlay1.style.zIndex = '10';
   })
 
   startPlay2.addEventListener('click', () => {
@@ -43,10 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   startPlay2.addEventListener('mouseover', () => {
     hoverPlay2 = true;
+    startPlay2.style.zIndex = '20';
   })
 
   startPlay2.addEventListener('mouseout', () => {
     hoverPlay2 = false;
+    startPlay2.style.zIndex = '10';
   })
 
   function animate() {
