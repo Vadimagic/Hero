@@ -62,10 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
       else if (leftPlay1 + startPlay1.offsetWidth >= windowWidth - speedMove1) moveLeft1 = true;
       if (topPlay1 <= 0) moveTop1 = false;
       else if (topPlay1 + startPlay1.offsetHeight >= windowHeight - speedMove1) moveTop1 = true;
-      if (Math.abs((leftPlay1 - leftPlay2) + (topPlay1 - topPlay2)) < 20) {
-        moveLeft1 = !moveLeft1;
-        moveTop1 = !moveTop1;
-      }
       moveLeft1 ? leftPlay1-=speedMove1 : leftPlay1+=speedMove1;
       moveTop1 ? topPlay1-=speedMove1 : topPlay1+=speedMove1;
     }
@@ -78,11 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
       else if (leftPlay2 + startPlay2.offsetWidth >= windowWidth - speedMove2) moveLeft2 = true;
       if (topPlay2 <= 0) moveTop2 = false;
       else if (topPlay2 + startPlay2.offsetHeight >= windowHeight - speedMove2) moveTop2 = true;
-      if (Math.abs((leftPlay1 - leftPlay2) + (topPlay1 - topPlay2)) < 20) {
-        moveLeft2 = !moveLeft2;
-        moveTop2 = !moveTop2;
-      }
-      
       moveLeft2 ? leftPlay2-=speedMove2 : leftPlay2+=speedMove2;
       moveTop2 ? topPlay2-=speedMove2 : topPlay2+=speedMove2;
     }
