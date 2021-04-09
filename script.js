@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
       this.audio = document.querySelector(`#${audio}`);
       this.start = document.querySelector(`.${start}`);
       this.speed = speed;
-      this.left = 0;
-      this.top = 0;
+      this.left = Math.random() * (windowWidth - this.start.offsetWidth);
+      this.top = Math.random() * (windowHeight - this.start.offsetHeight);
       this.moveLeft = false;
       this.moveTop = false;
       this.hover = false
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function pushAudioElements() {
     names.forEach(name => {
-      audioElements.push(new AudioElement(name.audio, name.btn, Math.random() * 8 + 2))
+      audioElements.push(new AudioElement(name.audio, name.btn, Math.random() * 8 + 3))
     })
   }
 
