@@ -21,6 +21,18 @@ document.addEventListener('DOMContentLoaded', () => {
   let hoverPlay1 = false;
   let hoverPlay2 = false;
 
+  const buttons = [];
+
+  class Button {
+    constructor() {
+
+    }
+
+    move() {
+      
+    }
+  }
+
   const togglePlay = (audioElement) => {
     audioElement.paused ? audioElement.play() : audioElement.pause();
   }
